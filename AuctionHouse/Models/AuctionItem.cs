@@ -11,6 +11,7 @@ namespace AuctionHouse.Models
     {
         [Key]
         public long AuctionItemId { get; set; }
+
         public string ItemDescription { get; set; }
         public decimal RatingPrice{ get; set; }
         public decimal BidPrice { get; set; }
