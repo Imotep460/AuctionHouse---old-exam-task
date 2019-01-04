@@ -33,6 +33,7 @@ namespace AuctionHouse
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseMiddleware<IpMiddelware>();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -44,6 +45,7 @@ namespace AuctionHouse
             }
 
             app.UseHttpsRedirection();
+            app.UseMiddleware<TimerMiddelware>();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
